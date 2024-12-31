@@ -1,0 +1,98 @@
+\documentclass{article}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\hypersetup{
+  colorlinks,
+  linkcolor={red!50!black},
+  citecolor={blue!50!black},
+  urlcolor={blue!80!black}
+}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{enumitem}
+\usepackage[ampersand]{easylist}
+\usepackage{amssymb}
+\ListProperties(Hide=100, Hang=true, Progressive=3ex,
+Style*=$\bullet$ ,Style2*=$\circ$ ,Style3*=-- ,Style4*=\tiny$\blacksquare$ )
+\setlength{\parindent}{0pt}
+\newcommand{\spreadline}[2]{%
+  \par % we want to be on a line by itself
+  \makebox[\linewidth][s]{% spread to the line width
+    \makebox[0pt][l]{#1}% text at left
+    \hfill
+    \makebox[0pt][r]{#2}% text at rightr
+  }
+  \par
+}
+\newcommand{\educationitem}[4]{%
+  \spreadline{\textbf{#1}}{#2}
+  \spreadline{\textit{#3}}{#4}
+}
+\newcommand{\experienceitem}[4]{%
+  \spreadline{\textbf{#1}}{#2}
+  \spreadline{#3}{#4}
+}
+\newcommand{\sectiontitle}[1]{%
+  \par % we want to be on a line by itself
+  \textsc{#1}
+  \smallskip
+  \hrule
+  \medskip
+  \par
+}
+\begin{document}
+\pagenumbering{gobble}
+\begin{center}
+  \Large\textbf{Michael Olson}
+  \vspace{2pt}
+  \par
+  % This needs to be stored {phone, email, github, linkedin}?
+  \scriptsize{(651)387-3522 $\vert$ \href{mailto:michaelolson01@gmail.com}{michaelolson01@gmail.com} $\vert$ \href{http://www.github.com/michaelolson01}{www.github.com/michaelolson01} $\vert$ \href{http://www.linkedin.com/in/michael-olson-5b495333}{www.linkedin.com/in/michael-olson-5b495333}}
+\end{center}
+\sectiontitle{Education}
+\educationitem{Metropolitan State University}{Saint Paul, MN}{BS in Computer Sciences}{2019 - 2023}
+Cum Laude / Deans List / 3.75 GPA\par
+\textit{Relevant Courses: Software Testing, Database Management Systems}\par
+\medskip
+\educationitem{Century College}{White Bear Lake, MN}{AS in Engineering}{2012 - 2014}
+\medskip
+\sectiontitle{Experience}
+\experienceitem{Full Stack Software Engineer}{April 2023 - August 2024}{Advisory Aerospace DBA Factory Twin}{Hopkins, MN}
+\begin{easylist}
+& Design, test, develop and document full stack system
+&& PostgreSQL \textbf{relational database}
+&& F Sharp for calculation, hosting GraphQL server
+&& node.js / vue.js for frontend ui/ux
+&& vite for https server
+& Worked with team members to implement and improve \textbf{CI/CD} for \textbf{Software Development Lifecycle}
+&& Designed, developed and tested continuous delivery pipeline. (PR → submit → build → test → release)
+&& Contributed to Automatic testing of software to ensure continuous improvement
+& Used \textbf{git} with github.com as a \textbf{version control system}
+&& Pull request reviews
+&& Automated building and testing.
+\end{easylist}
+\medskip
+\experienceitem{Computer Science Intern}{August 2022 - April 2023}{Advisory Aerospace DBA Factory Twin}{Hopkins, MN}
+\begin{easylist}
+& Design and develop UI using vuejs, and vuetify.
+& Implement GraphQL API in F Sharp.
+& Code reviews with git.
+\end{easylist}
+\medskip
+\sectiontitle{Projects}
+\spreadline{\textbf{Job Search Web App}}{August 2024 - Current}
+\begin{easylist}
+& Developed backend GraphQL server with C Sharp using the Entity Framework and a MariaDB Database.
+& Developed fronted end user interface using Vue.js, Vuetify, Apollo/GraphQL and Vite.
+\end{easylist}
+\medskip
+\spreadline{\textbf{Resume Builder App}}{December 2024 - Current}
+\begin{easylist}
+& Database ORM model in lisp with mito and MariaDB
+& Output using \LaTeX
+\end{easylist}
+\medskip
+\sectiontitle{Technical Skills}
+\textbf{Languages:} Java, F Sharp, C/C++, SQL, JavaScript/Typescript, HTML/CSS, Lisp, C Sharp\par
+\textbf{Frameworks:} Vue.js, Node.js, .NET, Hot Chocolate, OpenGL, Vuetify, Quasar, Vite, Entity Framework\par
+\textbf{Developer Tools:} Git, Docker, Unix/Linux, emacs, cucumber, VS Code\par
+\end{document}
